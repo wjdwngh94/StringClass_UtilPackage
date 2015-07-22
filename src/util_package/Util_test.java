@@ -1,6 +1,7 @@
 package util_package;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 //배열의 단점은 크기가 고정된다는 것이다.
@@ -67,6 +68,23 @@ public class Util_test {
 		}
 		
 		System.out.println("무한도전 멤버수 : " + set.size()); 
-
+		
+		//다른 통에 복사(정렬하기 위해서)
+		//Iterator it = set.iterator(); //정렬하는 메소드
+		//뽑힌 로또공들이 나열되어있는 공간
+		Iterator<String> it = set.iterator(); //String 자료들이 모인다.
+		
+		//hasNext(): 다음 데이터가 존재하는지 확인
+		//next(): 다음 데이터 반환
+		
+		while(it.hasNext()){ //데이터가 있다면 반복하여라
+			String name = it.next(); // 데이터 추출
+			//그다음은 내마음
+			System.out.println("이름 : " + name);
+			//데이터가 없을 때까지 반복된다.
+			//출력결과가 정형돈 부터 나오는 것으로 보아
+			//순서대로 저장되는것이 아니라는 것을 알 수 있다.
+			//그리고 저장된 순서는 바뀌지 않는다.
+		}
 	}
 }
